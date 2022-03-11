@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora Atual</title>
+    <style>
+        body{
+            background-color: blue;
+        }
+        h1{
+            color: white;
+            font: bold 25pt arial;
+            text-align: center
+        }
+        p{
+            color: white;
+            font:  bold 15pt arial;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="tempo()">
+    <h1>Hora Atual</h1>  
+    <p id="msg"></p>  
+    <p id="displayHours">
+    <script>      
+        function tempo(){
+            var currentTime = new Date()
+            var hora = currentTime.getHours()
+            var displayHours = document.getElementById('displayHours');
+            displayHours.innerHTML = currentTime.toString().substr(16, 8) + "hrs"  
+            if(hora < 12){
+                msg.innerHTML = ('Bom dia!')
+            }
+            else if(hora < 18){
+                msg.innerHTML = ('Boa tarde!')
+            }
+            else{
+                msg.innerHTML = ('Boa noite!')
+            }             
+        }
+        window.setInterval('tempo()', 1000)
+          
+    </script>
+    </p>
+</body>
+</html>
